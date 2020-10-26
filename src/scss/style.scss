@@ -1,0 +1,137 @@
+@mixin font($font_name, $file_name, $weight, $style) {
+  @font-face {
+    font-family: $font_name;
+    font-display: swap;
+    src: url("../fonts/#{$file_name}.woff") format("woff"),
+      url("../fonts/#{$file_name}.woff2") format("woff2");
+    font-weight: #{$weight};
+    font-style: #{$style};
+  }
+}
+
+@import "fonts";
+@import "header";
+@import "fl-outicons";
+@import "slick";
+@import "colors";
+@import "products";
+@import "tranding";
+@import "special";
+@import "rating";
+
+html {
+  font-size: 16px;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0 auto;
+  padding: 0;
+  height: 100%;
+}
+
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $button;
+  color: $white;
+  font-size: 14px;
+  letter-spacing: 0.35px;
+  transform: translate3d(0, -100%, 0);
+  transition: 400ms;
+  height: 0;
+  cursor: pointer;
+
+  &.active {
+    height: 30px;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.button {
+  padding: 20px 48px;
+  font-size: 1.1rem;
+  color: $white;
+  background-color: $button;
+  border: none;
+  box-shadow: 3px 4px 4px 1px rgba(0, 0, 0, 0.18);
+  transition: all 0.3s linear;
+
+  &:hover {
+    background-color: $button-hover;
+    box-shadow: 0 0 5px rgba($button, 1);
+  }
+}
+
+button:focus,
+input:focus,
+textarea:focus,
+a:focus {
+  outline: none !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+ul,
+li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+label {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: none;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+input,
+select,
+button,
+a {
+  outline: none;
+  border: 0;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+}
+
+p {
+  margin: 0;
+}
+
+.col-sm-3,
+.col-md-4 {
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
+
+.container-fluid {
+  padding-right: 30px !important;
+  padding-left: 30px !important;
+}

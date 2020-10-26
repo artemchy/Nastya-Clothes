@@ -1,0 +1,293 @@
+@import "colors";
+
+.trending__title {
+  padding-top: 90px;
+  font-size: 1.8rem;
+  font-weight: 400;
+  letter-spacing: 0.75px;
+
+  @media (max-width: 768px) {
+    padding-top: 60px;
+  }
+  @media (max-width: 480px) {
+    padding-top: 45px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.6rem;
+  }
+}
+
+.trending__subtitle {
+  margin-top: 1rem;
+  margin-bottom: 38px;
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: 0.35px;
+
+  @media (max-width: 480px) {
+    font-size: 0.9rem;
+  }
+  @media (max-width: 376px) {
+    font-size: 0.8rem;
+  }
+}
+
+.trending__subtitle,
+.trending__title {
+  text-align: center;
+}
+
+.card {
+  position: relative;
+  border: none;
+  border-radius: 0;
+  text-align: center;
+  cursor: pointer;
+
+  @media(max-width: 575px) {
+    margin-bottom: 20px;
+    :last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__hover {
+    position: absolute;
+    top: -10px;
+    left: -50%;
+    z-index: 10;
+    max-width: 388px;
+    box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.1);
+    border: 1px solid #cccccc;
+    background-color: #ffffff;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(15%);
+
+    @media (max-width: 1050px) {
+      left: -30%;
+    }
+    @media (max-width: 992px) {
+      left: -30%;
+    }
+    @media (max-width: 575px) {
+      left: 1%;
+    }
+    @media (max-width: 480px) {
+      max-width: 320px;
+      left: 5%;
+    }
+    @media (max-width: 411px) {
+      left: -3%;
+    }
+    @media (max-width: 376px) {
+      left: -8%;
+    }
+  }
+}
+
+.card:hover {
+  .card__hover {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.card__brand {
+  color: $text-grey;
+  margin-top: 5px;
+}
+
+.card__rating {
+  margin: 5px 0;
+}
+.card__price {
+  font-size: 1.1rem;
+}
+
+.card__hover-wrap {
+  padding: 10px;
+}
+.hover-pic {
+  position: relative;
+  display: flex;
+}
+
+.hover-pick__sticker {
+  position: absolute;
+  left: 0;
+  z-index: 5;
+  display: flex;
+
+  &.sticker__sale {
+    top: 10px;
+
+    & img {
+      width: 117px;
+      height: 27px;
+    }
+    & span {
+      top: 1px;
+    }
+  }
+
+  &.sticker__new {
+    top: 40px;
+
+    & span {
+      top: 1px;
+    }
+  }
+
+  & span {
+    position: absolute;
+    left: 10px;
+    color: $white;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+}
+
+.hover-pic__columns {
+  padding-left: 10px;
+}
+
+.hover-pic__colums-img {
+  padding: 0 0 5px 0;
+
+  &:last-child {
+    padding: 0;
+  }
+}
+
+.hover-pic__colums-img img {
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border 0.2s linear;
+
+  &:hover,
+  &:focus {
+    border: 2px solid $light-red;
+  }
+}
+
+.card__hover-info {
+  text-align: center;
+
+  &-button {
+    position: relative;
+  }
+  &-button span {
+    position: absolute;
+    top: 50%;
+    left: 95px;
+    z-index: 1;
+    color: #fff;
+    font-size: 1.4rem;
+    transform: translateY(-50%);
+
+    @media (max-width: 1199px) {
+      display: none;
+    }
+  }
+}
+
+.card__hover-info-button button {
+  width: 100%;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.45px;
+  text-transform: uppercase;
+
+  @media (max-width: 992px) {
+    padding: 15px;
+    font-size: 1rem;
+  }
+  @media (max-width: 768px) {
+    padding: 13px;
+    font-size: 0.8rem;
+  }
+  @media (max-width: 575px) {
+    font-size: 18px;
+  }
+}
+
+.card__hover-info h6 {
+  margin-top: 10px;
+  color: $text-grey;
+  font-weight: 400;
+  font-size: 1rem;
+
+  @media (max-width: 768px) {
+    margin: 5px 0;
+    font-size: 0.8rem;
+  }
+  @media (max-width: 575px) {
+    margin: 5px 0;
+    font-size: 1rem;
+  }
+}
+.card__hover-title {
+  color: #161616;
+  font-size: 14px;
+  font-weight: 400;
+
+  @media (max-width: 768px) {
+    margin-top: 5px;
+  }
+}
+
+.card__hover-price {
+  margin-top: 5px;
+  color: #242424;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.35px;
+}
+.card__hover-old-price {
+  color: #989898;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  text-decoration: line-through;
+}
+
+.card__hover-colors {
+  display: flex;
+  justify-content: center;
+}
+
+.card__hover-colors span {
+  margin-right: 15px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.card__hover-colors__item {
+  margin: 18px 0 15px 0;
+  width: 37px;
+  height: 37px;
+  box-shadow: 3px 4px 4px 1px rgba(0, 0, 0, 0.15);
+  @media (max-width: 992px) {
+    width: 27px;
+    height: 27px;
+    margin: 10px 0;
+  }
+
+  &:nth-child(1) {
+    background-color: #dc911b;
+  }
+  &:nth-child(2) {
+    background-color: #009de0;
+  }
+  &:nth-child(3) {
+    background-color: #66cc33;
+  }
+  &:nth-child(4) {
+    background-color: #ffcccc;
+  }
+}

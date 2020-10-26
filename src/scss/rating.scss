@@ -1,0 +1,26 @@
+.rating {
+  display: inline-flex;
+  justify-content: center;
+  flex-direction: row-reverse;
+  color: #d6d6d6;
+
+  &__star {
+    margin-right: 5px;
+    transition: all 0.2s linear;
+    &:hover, &:hover ~ & {
+      color: #f0ce4a;
+    }
+
+    &:first-child {
+      margin: 0;
+    }
+  }
+}
+
+.rating[data-total-value='1'] .rating__star:nth-child(n + 5),
+.rating[data-total-value='2'] .rating__star:nth-child(n + 4),
+.rating[data-total-value='3'] .rating__star:nth-child(n + 3),
+.rating[data-total-value='4'] .rating__star:nth-child(n + 2),
+.rating[data-total-value='5'] .rating__star:nth-child(n + 1) {
+    color: #f0ce4a;
+}
